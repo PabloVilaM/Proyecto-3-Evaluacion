@@ -10,7 +10,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.text.Font;
 import javafx.scene.effect.DropShadow;
-
+//CREAMOS NUESTRA CLASE BOTON HEREDANDO DE LA DE JAVAFX
+//PARA ESTABLECER LAS PROPIEDADES QUE NOS INTERESAN 
+//Y NO TENER QUE HACERLO CADA VEZ QUE INSTANCIAMOS UN BOTON
 public class JuegoBotones extends Button {
     
     private final String FONT_PATH = "src/modelado/recursos/kenvector_future.ttf";
@@ -35,14 +37,14 @@ public class JuegoBotones extends Button {
             setFont(Font.font("Verdana", 23));
         }
     }
-    
+//    UNA IMAGEN PARA CUANDO EL BOTON ES PRESIONADO
     private void setButtonPressedStyle(){
         setStyle(BUTTON_PRESSED_STYLE);
         setPrefHeight(45);
         setLayoutY(getLayoutY() + 4);
         
     }
-    
+//    UNA IMAGEN PARA EL BOTON SIN PRESIONAR
     private void setButtonReleasedStyle(){
         setStyle(BUTTON_FREE_STYLE);
         setPrefHeight(49);
@@ -50,6 +52,7 @@ public class JuegoBotones extends Button {
         
     }
     
+//    LE ASIGNAMOS EVENTOS CON EL CLICK IZQUIERDO DEL RATÓN
     private void metodoListenerButton (){
         
   	setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -68,7 +71,7 @@ public class JuegoBotones extends Button {
                  }
               }
           });
-        
+//      EFECTO CUANDO EL PUNTERO PASA POR ENCIMA DE ÉSTE  
             setOnMouseEntered(new EventHandler<MouseEvent>() {
              @Override
               public void handle(MouseEvent event) {
