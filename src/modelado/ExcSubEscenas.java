@@ -36,16 +36,19 @@ public class ExcSubEscenas extends SubScene {
         
     }
 
-    
+    /** INSTANCIAMOS UN OBJETO TRANSLATETRANSITION  **/
   public void moverSubScene (){
       TranslateTransition tr = new TranslateTransition();
+//      TIEMPO QUE DURA LA TRANSICION DE UNA COORDENADA A OTRA
       tr.setDuration(Duration.seconds(0.3));
-      /**QUÉ ELEMENTO MOVEMOS **/
+      /**LE ASIGNAMOS EL  ELEMENTO QUE QUEREMOS MOVER
+       EN ESTE CASO, NUESTRO OBJETO DE LA CLASE EXSUBSCENES**/
       tr.setNode(this);
-      /**COMO CAMBIA SU POSICION **/
+      /**SI ES VERDADERO LO MOSTRAMOS EN PANTALLA CON LA TRANSICION **/
       if(ocultar){
       tr.setToX(-676);
       ocultar=false;
+//      LO SACAMOS DE LA PANTALLA CON LA TRANSICION
       }else{
           tr.setToX(0);
           ocultar = true;
