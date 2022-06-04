@@ -61,13 +61,16 @@ public class ViewManager {
     }
     
     private void noSolaparSubScenas(ExcSubEscenas subScene){
+//        SI HAY ALGUNA SUBSCENA EN PANTALLA LLAMAMOS AL MÉTODO PARA HACER LA TRANSICION
         if(ocultarSubScena != null){
             ocultarSubScena.moverSubScene();
         }
+//        HACEMOS LO MISMO CON LA SUBSCENA QUE PASAMOS POR PARAMETRO
         subScene.moverSubScene();
+//        AHORA LA SUBSCENA ACTIVA PASA A SER LA SUBSCENA PASADA POR PARAMETRO
         ocultarSubScena= subScene;
     }
-    
+//    INICIALIZAMOS CADA SUBSCENEA CON LAS IMAGENES CORRESPONDIENTES Y LAS AÑADIMOS AL PANE
     private void crearSubScenas(){
         subScenaCreditos = new ExcSubEscenas("File:ayuda.png");
         mainPane.getChildren().add(subScenaCreditos);
@@ -75,8 +78,9 @@ public class ViewManager {
         subScenaAyuda = new ExcSubEscenas("File:creditos.png");
         mainPane.getChildren().add(subScenaAyuda);
         
-//        subElegirJuego = new ExcSubEscenas("");
-//        mainPane.getChildren().add(subElegirJuego);
+
+
+
     }
     
     
@@ -84,6 +88,8 @@ public class ViewManager {
         
         return mainStage;
     }
+//    UN METODO PARA DARLE POSICION A CADA BOTON A MEDIDA QUE SE VAN AÑADIENDO A UNA LISTA
+//            NO TENER ASI QUE ASIGNAR COORDENADAS MANUALMENTE
     private void añadirBotonesMenu(JuegoBotones boton){
         boton.setLayoutX(MENU_BOTONES_INICIAL_X + botonesMenu.size()*200);
         boton.setLayoutY(MENU_BOTONES_INICIAL_Y);
@@ -92,7 +98,8 @@ public class ViewManager {
         
     }
     
-    
+//    AGRUPAR TODOS LOS METODOS DE CREACION DE BOTONES EN UNO SOLO, 
+//            PARA QUE SEA ÉSTE EL QUE AÑADIMOS EN EL CONSTRUCTOR
      private void crearBoton(){
      crearBotonInicio();
      crearBotonAyuda();
@@ -102,6 +109,12 @@ public class ViewManager {
      crearBotonExtraPong2();
      crearBotonScores();
     }
+//CREAMOS BOTON SE LO PASAMOS AL METODO DE AÑADIR LOS BOTONES
+//        INSTANCIAMOS OBJETO DE LA CLASE DONDE TENEMOS EL JUEGO
+//                LLAMAMOS AL MÉTODO DE INICIALIZARLO
+//                        PUESTO QUE ES EL BOTÓN DE JUGAR
+//                                ADEMÁS ESTABLECEMOS LA CONEXIÓN Y LA CREACIÓN SI NO
+//                                        EXISTIERA CON LA BASE DE DATOS
     private void crearBotonInicio (){
         JuegoBotones botonInicio = new JuegoBotones("JUGAR");
         añadirBotonesMenu(botonInicio);
@@ -109,7 +122,7 @@ public class ViewManager {
         botonInicio.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-//                 noSolaparSubScenas(subElegirJuego);
+
                 
   
                  GameManager gm = new GameManager();
@@ -126,6 +139,8 @@ public class ViewManager {
         });
         
     }
+//    EN ESTOS DOS MÉTODOS SIGUIENTES EN EL ACTIONEVENT LLAMAMOS AL METODO
+//            QUE EFECTUA LAS TRANSICIONES Y LE PASAMOS LA SUBSCENA CORRESPONDIENTE
      private void crearBotonAyuda (){
         JuegoBotones botonAyuda = new JuegoBotones("AYUDA");
       
@@ -159,6 +174,7 @@ public class ViewManager {
         });
          
     }
+//      CERRAMOS LA APLICACION
        private void crearBotonSalir (){
         JuegoBotones botonSalir = new JuegoBotones("SALIR");
         añadirBotonesMenu(botonSalir);
@@ -171,7 +187,8 @@ public class ViewManager {
         });
         
     }
-       
+//     ESTABLECEMOS LA POSICION MANUALMENTE DADO QUE NO IRAN EN FILA CON EL RESTO
+//             LLAMAMOS EN EL EVENTO AL METODO EN EL QUE ESTÁ CODIFICADO EL JUEGO
             private void crearBotonExtraPong (){
         JuegoBotones botonExtraPong = new JuegoBotones("PONG SP");
        botonExtraPong.setLayoutX(281);
@@ -206,6 +223,7 @@ public class ViewManager {
         });
         
     }
+//         ESTABLECEMOS UN FONDO DEL PANEL PRINCIPAL
    private void crearFondo(){
         BackgroundImage myBI= new BackgroundImage(new Image("file:fondoMenu.jpg",1024,768,false,true),
                     BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
@@ -227,20 +245,9 @@ public class ViewManager {
        iv3.setScaleX(0.7);
        iv3.setScaleY(0.7);
    }
-   public  void insertarRecord (String alias,int vida){
-       String auxVida = vida+"";
-       try {
-          cn.conectarBase();
-            cn.insertar(alias, auxVida);
-       } catch (Exception e) {
-       }
-      
-     
-  
-       
-           
-       
-   }
+
+//   CREAMOS Y DAMOS POSICION AL BOTÓN PARA MOSTRAR LAS PUNTUACIONES
+//           LLAMANDO AL METODO QUE HACE LA CONSULTA EN LA BASE DE DATOS
     private void crearBotonScores (){
         JuegoBotones botonScores = new JuegoBotones("RANKING");
       
