@@ -39,7 +39,7 @@ public class ViewManager {
     private Connection c=null;
     
     private String nombreTabla="Puntuaciones";
-    private Conexion cn= new Conexion(sentence, c, nombreTabla);
+    private Conexion cn = Conexion.getInstance();
     private ExcSubEscenas subElegirJuego;
     private ExcSubEscenas ocultarSubScena;
     private ExcSubEscenas subEscenas;
