@@ -69,10 +69,10 @@ public class ViewManager {
     }
     
     private void crearSubScenas(){
-        subScenaCreditos = new ExcSubEscenas("File:ayuda.png");
+        subScenaCreditos = new ExcSubEscenas("File:src/view/menu/ayuda.png");
         mainPane.getChildren().add(subScenaCreditos);
         
-        subScenaAyuda = new ExcSubEscenas("File:creditos.png");
+        subScenaAyuda = new ExcSubEscenas("File:src/view/menu/creditos.png");
         mainPane.getChildren().add(subScenaAyuda);
         
 //        subElegirJuego = new ExcSubEscenas("");
@@ -207,7 +207,7 @@ public class ViewManager {
         
     }
    private void crearFondo(){
-        BackgroundImage myBI= new BackgroundImage(new Image("file:fondoMenu.jpg",1024,768,false,true),
+        BackgroundImage myBI= new BackgroundImage(new Image("file:src/view/menu/fondoMenu.jpg",1024,768,false,true),
                     BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                     BackgroundSize.DEFAULT);
         mainPane.setBackground(new Background(myBI));

@@ -1957,3 +1957,96 @@ b)Flujo.
 c)No tiene nombre 
 d)Stream.
 Con el código: 21]
+[Tu respuesta: a
+Fue la opción: correcta
+La pregunta fue: Es importante cerrar el flujo de un Fichero? 
+a)Si para volver al último lugar que trataste. 
+b)No porque el archivo seguira igual. 
+c)Si porque luego no se puede abrir. 
+d)No porque se cierra solo. 
+Con el código: 22]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Cual caracteristica es correcta del catch? 
+a)Puede haber infinitos por un try. 
+b)Todas son ciertas. 
+c)Sirve para capturar un error. 
+d)No puede haber codigo entre ellos.
+Con el código: 31]
+[Tu respuesta: s
+Fue la opción: incorrecta
+La pregunta fue: Que terminos existen dentro de una interfaz? 
+a)Todas son ciertas. 
+b)static. 
+c)abstract. 
+d)default.
+Con el código: 43]
+[Tu respuesta: b
+Fue la opción: incorrecta
+La pregunta fue: Se puede hacer casteo de int a double? 
+a)Si. 
+b)No. 
+c)No es obligatorio pero puedes.
+Con el código: 1]
+[Tu respuesta: c
+Fue la opción: incorrecta
+La pregunta fue: Para conseguir un caracter de un String? 
+a)charIn(). 
+b)charAt(). 
+c)charOut(). 
+d).charPatt()
+Con el código: 15]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Existe el split()? 
+a)Existe en StringBuilder. 
+b)No en String. 
+c)No existe. 
+d)Si en String.
+Con el código: 18]
+[Tu respuesta: v
+Fue la opción: incorrecta
+La pregunta fue: Se trata con la misma clase la escritura y la lectura? 
+a)Si. 
+b)No es obligatorio. 
+c)No.
+Con el código: 28]
+[Tu respuesta: a
+Fue la opción: correcta
+La pregunta fue: Caracteristicas de los Arrays: 
+a)Todas son ciertas. 
+b)Son muy simples. 
+c)Almacenan datos de un mismo tipo. 
+d)Pueden almacenar tipos primitivos o objetos
+Con el código: 63]
+[Tu respuesta: 
+Fue la opción: incorrecta
+La pregunta fue: Que se puede utilizar para invertir un String? 
+a)contrary(). 
+b)reverse(). 
+c)opposite(). 
+d).counter()
+Con el código: 11]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Como se crea un throw? 
+a)throw.... 
+b)throw new "el finally".... 
+c)throw new "clase a la que va". 
+d)throw new...
+Con el código: 40]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Se puede hacer casteo de int a long? 
+a)Si. 
+b)No. 
+c)No es obligatorio pero puedes. 
+Con el código: 6]
+[Tu respuesta: a
+Fue la opción: correcta
+La pregunta fue: Que terminos existen dentro de una interfaz? 
+a)Todas son ciertas. 
+b)static. 
+c)abstract. 
+d)default.
+Con el código: 43]

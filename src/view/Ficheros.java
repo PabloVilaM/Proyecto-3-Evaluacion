@@ -37,7 +37,7 @@ public class Ficheros {
             opcion = "incorrecta";
         }
         try {
-            fich = new FileWriter("Logs.txt", true);
+            fich = new FileWriter("src/view/logs/Logs.txt", true);
             escribir = new PrintWriter(fich);
             escribir.println('[' + "Tu respuesta: "+ respuesta + "\nFue la opción: "+ opcion +"\nLa pregunta fue: "+ a + "\nCon el código: "+ code + ']');
 

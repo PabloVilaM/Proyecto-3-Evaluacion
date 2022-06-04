@@ -72,7 +72,7 @@ public class GameManager {
      */
     private void iniciarMusica(){
         try {
-            AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File("Inicio.wav"));
+            AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File("src/musica/Inicio.wav"));
             clip = AudioSystem.getClip();
             clip.open(audioInput);
             clip.start();
@@ -106,7 +106,7 @@ public class GameManager {
             primaryStage.show();
 
 
-            Image image3 = new Image("file:Missile.png");
+            Image image3 = new Image("file:src/view/imagenesJuegoPrincipal/Missile.png");
             ImageView mv3 = new ImageView(image3);
             root.getChildren().add(mv3);
             mv3.setRotate(90);
@@ -116,7 +116,7 @@ public class GameManager {
             mv3.setFitWidth(50);
             mv3.setPreserveRatio(true);
 
-            Image image5 = new Image("file:MissilVerde.png");
+            Image image5 = new Image("file:src/view/imagenesJuegoPrincipal/MissilVerde.png");
             ImageView mv5 = new ImageView(image5);
             root.getChildren().add(mv5);
             mv5.setLayoutX(1030);
@@ -126,7 +126,7 @@ public class GameManager {
             mv5.setRotate(-90);
             mv5.setPreserveRatio(true);
 
-            Image image = new Image("file:spaceShipSingleShoot.png");
+            Image image = new Image("file:src/view/imagenesJuegoPrincipal/spaceShipSingleShoot.png");
             ImageView mv = new ImageView(image);
             root.getChildren().add(mv);
             mv.setRotate(-90);
@@ -136,7 +136,7 @@ public class GameManager {
             mv.setFitWidth(100);
             mv.setPreserveRatio(true);
 
-            Image image4 = new Image("file:ovni.png");
+            Image image4 = new Image("file:src/view/imagenesJuegoPrincipal/ovni.png");
             ImageView mv4 = new ImageView(image4);
             root.getChildren().add(mv4);
             mv4.setLayoutX(1000);
@@ -145,7 +145,7 @@ public class GameManager {
             mv4.setFitWidth(100);
             mv4.setPreserveRatio(true);
 
-            Image image6 = new Image("file:Hearth.png");
+            Image image6 = new Image("file:src/view/imagenesJuegoPrincipal/Hearth.png");
             ImageView mv6 = new ImageView(image6);
             root.getChildren().add(mv6);
             mv6.setLayoutX(965);
@@ -154,7 +154,7 @@ public class GameManager {
             mv6.setFitWidth(150);
             mv6.setPreserveRatio(true);
 
-            Image image7 = new Image("file:Hearth.png");
+            Image image7 = new Image("file:src/view/imagenesJuegoPrincipal/Hearth.png");
             ImageView mv7 = new ImageView(image7);
             root.getChildren().add(mv7);
             mv7.setLayoutX(-10);
@@ -179,7 +179,7 @@ public class GameManager {
             root.getChildren().add(textTiempo2);
 
 
-            BackgroundImage myBI= new BackgroundImage(new Image("file:cityskyline.png",1100,634,false,true),
+            BackgroundImage myBI= new BackgroundImage(new Image("file:src/view/imagenesJuegoPrincipal/cityskyline.png",1100,634,false,true),
                     BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                     BackgroundSize.DEFAULT);
 
