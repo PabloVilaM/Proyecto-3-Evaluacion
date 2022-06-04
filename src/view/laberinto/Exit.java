@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 
 public class Exit extends Rectangle {
     boolean finish = false;
@@ -31,8 +32,7 @@ public class Exit extends Rectangle {
         if (hasCollision() && !finish) {
             finish = true;
 
-
-
+            MazeController.cerrarStage();
         }
     }
 }

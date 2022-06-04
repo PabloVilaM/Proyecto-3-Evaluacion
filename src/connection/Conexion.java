@@ -95,8 +95,6 @@ public class Conexion {
     }
 
     public void consultar(String nombreTabla) throws SQLException, ClassNotFoundException {
-    
-        ResultSet rs = null;
         
         try {
              Class.forName("org.sqlite.JDBC");

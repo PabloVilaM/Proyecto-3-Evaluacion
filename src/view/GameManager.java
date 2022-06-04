@@ -214,7 +214,7 @@ public class GameManager {
                             System.out.println(numero);
                             String pregunta = Preguntas.darPreguntas(numero, map);
                             Tiempo temp = new Tiempo();
-                            temp.Contar();
+                            temp.Contar(10);
                             String respuesta = JOptionPane.showInputDialog(pregunta);
                             boolean correcion = Preguntas.comprobarRespuesta(numero, respuesta);
                             if (correcion == false || correcion == true){

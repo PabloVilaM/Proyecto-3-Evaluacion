@@ -36,7 +36,7 @@ public class Tiempo {
         }
     }
     //Crea un timer, inicia segundos a 0 y comienza a contar
-    public void Contar()
+    public void Contar(int segundos2)
     {
 
         jframe = new JFrame();
@@ -48,7 +48,7 @@ public class Tiempo {
         jframe.setVisible(true);
 
         this.sobrante=0;
-        this.segundos=10;
+        this.segundos= segundos2;
         timer = new Timer();
         timer.schedule(new Contador(), 0, 1000);
 
