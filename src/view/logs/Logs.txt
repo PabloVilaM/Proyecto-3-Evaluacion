@@ -2050,3 +2050,81 @@ b)static.
 c)abstract. 
 d)default.
 Con el código: 43]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Se puede hacer casteo de short a long? 
+a)Si. 
+b)No. 
+c)No es obligatorio pero puedes. 
+Con el código: 8]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Que estructuras de colecciones conocemos? 
+a)FIFO y FITO. 
+b)FIFO y FILO. 
+c)FICO y FIFO. 
+d)FIFO y FIMO
+Con el código: 54]
+[Tu respuesta: a 
+Fue la opción: incorrecta
+La pregunta fue: Se trata con la misma clase la escritura y la lectura? 
+a)Si. 
+b)No es obligatorio. 
+c)No.
+Con el código: 28]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Los atributos en interfaces... 
+a)Deben declararse e inicializarse al principio. 
+b)Ninguna es correcta. 
+c)Deben ser final. 
+d)No puede haber atributos.
+Con el código: 48]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Que se puede utilizar para invertir un String? 
+a)contrary(). 
+b)reverse(). 
+c)opposite(). 
+d).counter()
+Con el código: 11]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Si te digo que estas preguntas estan hechas con una Coleccion y que cada una tiene una clave, que uso? 
+a)Set. 
+b)List. 
+c)Queue. 
+d)Map.
+Con el código: 58]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Que se implementa para las interfaces en Java 9? 
+a)Metodos protected. 
+b)Metodos static. 
+c)Metodos private. 
+d)Metodos default.
+Con el código: 49]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: El try... 
+a)Va a ser codigo que se intente. 
+b)Tiene que tener mínimo un catch relacionado. 
+c)Captura el error. 
+d)A y B son ciertas.
+Con el código: 39]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Que se puede utilizar para dividir un String? 
+a)divide(). 
+b)substring(). 
+c)partition(). 
+d).separate()
+Con el código: 12]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Que se puede utilizar para dividir un String? 
+a)divide(). 
+b)substring(). 
+c)partition(). 
+d).separate()
+Con el código: 12]

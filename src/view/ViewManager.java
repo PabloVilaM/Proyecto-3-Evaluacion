@@ -20,7 +20,8 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.stage.Stage;
 import modelado.*;
-
+import view.laberinto.Maze;
+import view.laberinto.MazeController;
 
 
 public class ViewManager {
@@ -39,7 +40,7 @@ public class ViewManager {
     private Connection c=null;
     
     private String nombreTabla="Puntuaciones";
-    private Conexion cn= new Conexion(sentence, c, nombreTabla);
+    private Conexion cn= Conexion.getInstance();
     private ExcSubEscenas subElegirJuego;
     private ExcSubEscenas ocultarSubScena;
     private ExcSubEscenas subEscenas;
@@ -101,6 +102,7 @@ public class ViewManager {
      crearBotonExtraPong();
      crearBotonExtraPong2();
      crearBotonScores();
+     crearBotonLaberinto();
     }
     private void crearBotonInicio (){
         JuegoBotones botonInicio = new JuegoBotones("JUGAR");
@@ -110,9 +112,7 @@ public class ViewManager {
             @Override
             public void handle(ActionEvent event) {
 //                 noSolaparSubScenas(subElegirJuego);
-                
-  
-                 GameManager gm = new GameManager();
+                GameManager gm = new GameManager();
                  gm.inicializarJuego();
                cn.conectarBase();
                 try {
@@ -264,6 +264,29 @@ public class ViewManager {
                     }catch(ClassNotFoundException | SQLException e){
                         
                     }
+            }
+        });
+    }
+
+    private void crearBotonLaberinto (){
+        JuegoBotones botonScores = new JuegoBotones("Tauro");
+
+
+        botonScores.setLayoutX(761);
+        botonScores.setLayoutY(680);
+        botonScores.setScaleX(1.2);
+
+        botonScores.setStyle("-fx-background-color: transparent; -fx-background-image: url('/modelado/recursos/yellow_button00.png');");
+        mainPane.getChildren().add(botonScores);
+
+        botonScores.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+
+                MazeController mazo = new MazeController();
+                mazo.iniciar();
+
             }
         });
     }

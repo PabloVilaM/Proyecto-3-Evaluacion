@@ -214,7 +214,7 @@ public class GameManager {
                             System.out.println(numero);
                             String pregunta = Preguntas.darPreguntas(numero, map);
                             Tiempo temp = new Tiempo();
-                            temp.Contar();
+                            temp.Contar(10);
                             String respuesta = JOptionPane.showInputDialog(pregunta);
                             boolean correcion = Preguntas.comprobarRespuesta(numero, respuesta);
                             if (correcion == false || correcion == true){
@@ -250,7 +250,8 @@ public class GameManager {
                                String auxHp= hp+"";
                                Statement sentence = null;
                                Connection c = null;
-                               Conexion cn = new Conexion(sentence, c, "Puntuaciones");
+                               //Conexion cn = new Conexion(sentence, c, "Puntuaciones");
+                               Conexion cn = Conexion.getInstance();
                                animationball.stop();
                                clip.stop();
                                try {
@@ -267,7 +268,8 @@ public class GameManager {
                                String auxHp= hp+"";
                                Statement sentence = null;
                                Connection c = null;
-                               Conexion cn = new Conexion(sentence, c, "Puntuaciones");
+                               //Conexion cn = new Conexion(sentence, c, "Puntuaciones");
+                               Conexion cn = Conexion.getInstance();
                                animationball.stop();
                                clip.stop();
                                 try {
