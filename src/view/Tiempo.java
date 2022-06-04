@@ -8,10 +8,15 @@ import javax.swing.JLabel;
 
 
 public class Tiempo {
+    //El timer a crear
      private Timer timer = new Timer();
+     //El tiempo restante
     private int segundos=0;
+    //El tiempo que sobra al restante para llegar a 10
     private int sobrante=0;
+    //El label
     private JLabel jlabel;
+    //El frame
     private JFrame jframe;
 
 
@@ -57,11 +62,11 @@ public class Tiempo {
     {
         return this.segundos;
     }
-
+   //Metodo que retorna los segundosSobrantes
     public int getSobrante() {
         return sobrante;
     }
-
+   //metodo para conseguir el Frame
     public JFrame getJframe() {
         return jframe;
     }

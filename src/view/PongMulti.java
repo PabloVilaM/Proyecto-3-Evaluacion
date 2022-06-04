@@ -15,27 +15,40 @@ import javax.swing.*;
 
 public class PongMulti {
 
+    //Tamaño del texto
     private static final double TEXT_SIZE = 15;
+    //Ancho del stick
     private final int STICK_ANCHO = 7;
+    //Altura del stick
     private final int STICK_ALTURA = 50;
+    //Ancho de la pantalla
     private final int TAMXP = 600;
+    //Altura de la pantalla
     private final int TAMYP = 400;
+    //Centro de la bola en x
     private int ballCenterX = 300;
+    //Velocidad actual de la bola en x
     private int ballCurrentSpeedX = 3;
+    //Centro de la bola en y
     private int ballCenterY = 30;
+    //Velocidad de la bola en y
     private int ballCurrentSpeedY = 3;
+    //Variable que hace que no nos salgamos y colisionemos bien con la pantalla
     private int stickPosY = (STICK_ALTURA-STICK_ANCHO) /2;
+    //Velocidad actual del Stick
     private int stickCurrentSpeed = 0;
+    //Frame per second
     private float segundos = 0.017f;
+    //Objeto TimeLine, que le da "animacion" a todo lo que tenemos en pantalla
     private Timeline animationPong;
+    //La velocidad actual del stick contrario
     private int stickCurrentEnemySpeed = 0;
+    //Variable que hace que el stick contrario no se salga de pantalla
     private  int StickPosEnemyY = (STICK_ALTURA-STICK_ANCHO) /2;
+    //El score 1
     private int score1 = 0;
+    //El score 2
     private int score2 = 0;
-
-    
-    
-    
 
 
     public void inicializarJuegoPong(){
@@ -214,7 +227,12 @@ public class PongMulti {
             }
         });
     }
-
+    /**
+     * Como bien dice el metodo, consigue la colision con el stick para que así el balon rebote
+     * @param ball El objeto de la pelota
+     * @param stick El objeto del rectangulo
+     * @return Retorna un numero para saber la zona de colision y posteriormente darle un angulo
+     */
     private int conseguirStickCollision(Circle ball, Rectangle stick){
         if(Shape.intersect(ball,stick).getBoundsInLocal().isEmpty()){
             return 0;
@@ -234,6 +252,12 @@ public class PongMulti {
         }
     }
 
+    /**
+     * Este metodo da angulo según la zona de colision en la paleta que tenga la pelota, el 1 y el 4 es que ha golpeado
+     * en una de las esquinas por ende recibe mas velocidad en la y, el 2 y en el 3 ha golpeado mas en el centro por el que
+     * la velocidad de x e y son las mismas
+     * @param zonaColision seccion de la pala en la que colisiona la bola
+     */
     private  void calcularVelocidad(int zonaColision){
         switch (zonaColision){
             case 0:
@@ -257,6 +281,12 @@ public class PongMulti {
         }
     }
 
+    /**
+     * Este metodo da angulo según la zona de colision en la paleta que tenga la pelota, el 1 y el 4 es que ha golpeado
+     * en una de las esquinas por ende recibe mas velocidad en la y, el 2 y en el 3 ha golpeado mas en el centro por el que
+     * la velocidad de x e y son las mismas. Este se aplica a la paleta contraria, optimizable.
+     * @param zonaColision seccion de la pala en la que colisiona la bola
+     */
     private  void calcularVelocidad2(int zonaColision){
         switch (zonaColision){
             case 0:

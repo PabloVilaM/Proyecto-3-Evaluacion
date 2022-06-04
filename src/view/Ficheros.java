@@ -11,9 +11,21 @@ import java.io.PrintWriter;
 import java.util.Map;
 
 public class Ficheros {
+    //Objeto para escribir
     PrintWriter escribir;
+    //Objeto para leer
     FileWriter fich;
+    //Opcion para ver si es la correcta
     String opcion;
+
+    /**
+     *
+     * Método que crea un fichero llamado, logs, sirve para que el usuario vea las ultimas preguntas que se han hecho y sus respuestas
+     * @param respuesta Si eligio a b c o d
+     * @param correcion Si es correcto o incorrecto
+     * @param lista La lista de preguntas y respuestas
+     * @param code El codigo de la lista
+     */
     public void crearFichero(String respuesta, boolean correcion, Map lista, int code){
         
         String a = (String)lista.get(code);

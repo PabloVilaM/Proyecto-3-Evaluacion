@@ -32,35 +32,45 @@ import javax.swing.JOptionPane;
 
 public class GameManager {
 
+    //tamaño de la ventana en ancho
     private   final int TAMX = 1100;
+    //tamaño de la ventana en alto
     private   final int TAMY = 618;
+    //Lo que comunmente se conoce como "fps"
     private float segundos = 0.017f;
-    ViewManager vm = null;
 
+   //A y B son dos variables que posteriormente usamos para coger tanto el tiempo sobrante como el que hay del segundo timer para la vida
     private  int a = 0;
     private  int b = 0;
 
+    //Posición del misil en el ancho
     private   int misilx = 0;
+    //Posicion del misil en el alto
     private  int misily = 0;
+    //Velocidad del misil ( a cuantos pixeles se mueve para entendernos)
     private  float misilspeed = 0;
 
+    //Posicion del misil enemigo en el ancho
     private  int misilmalox = 0;
+    //Posicion del misil enemigo en lo alto
     private  int misilmaloy = 0;
+    //Velocidad del misil enemigo
     private  float misilmalospeed = 0;
 
+    //Tu HP o vida en español
     private   int hp=99;
+    //El hp del enemigo o vida en español
     private   int hp2=5;
+    //Objeto "core" dado que es quien mantiene la animacion, en una timeline de duracion infinita hasta que nosotros queramos
     private Timeline animationball;
 
-    Clip clip;
-    
-    public void inicializarJuego (){
-       
-        AnchorPane root = new AnchorPane();
-        Scene scene = new Scene(root,TAMX, TAMY, Color.BLACK);
-        String hpvida = String.valueOf(hp);
-            String hpvida2 = String.valueOf(hp2);
+    //Un objeto Clip, sirve para dar audio al juego
+    private Clip clip;
 
+    /**
+     * Clase por la cual se añade musica al juego, el clip pertenecera a la clase para luego pausarlo
+     */
+    private void iniciarMusica(){
         try {
             AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File("Inicio.wav"));
             clip = AudioSystem.getClip();
@@ -73,6 +83,22 @@ public class GameManager {
         } catch (LineUnavailableException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Este método es sencillo, pero repetitivo por eso es tan grande. Creamos
+     * todo lo que tenga que ver con la pantalla del trivia, el panel las naves los misiles, el fondo etc... y les damos las coordenadas
+     * y la velocidad de ser necesario, ademas añade las teclas que se pueden pulsar y el guardado de logs así como todo lo que corrresponde al juego.
+     */
+    public void inicializarJuego (){
+
+        iniciarMusica();
+
+        AnchorPane root = new AnchorPane();
+        Scene scene = new Scene(root,TAMX, TAMY, Color.BLACK);
+        String hpvida = String.valueOf(hp);
+            String hpvida2 = String.valueOf(hp2);
+
 
            Stage primaryStage = new Stage();
             primaryStage.setTitle("ExceptionHunter");
@@ -156,7 +182,7 @@ public class GameManager {
             BackgroundImage myBI= new BackgroundImage(new Image("file:cityskyline.png",1100,634,false,true),
                     BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                     BackgroundSize.DEFAULT);
-                //then you set to your node
+
             root.setBackground(new Background(myBI));
              animationball = new Timeline(
                     new KeyFrame(Duration.seconds(segundos), (ActionEvent ae)-> {
@@ -170,6 +196,8 @@ public class GameManager {
                         mv5.setX(misilmalox);
 
 
+                        //Si los misiles llegan a chocar con las naves, se genera la pregunta, el timer y se guardan las respuestas en los logs
+                        //para que luego se puedan visionar, obviamente pausa la ventana de atras y los misiles recuperan la posicion inicial.
                         if (misilx >= 995){
                             misilspeed = 0.0001f;
                             misilmalospeed = 0.0001f;
@@ -213,7 +241,8 @@ public class GameManager {
 
                             animationball.play();
                         }
-
+                        //Si el hp de cualquiera de los dos llega a igual o menor que 0 acaba la partida y cierra la
+                        //musica y el la ventana.
                     if(hp <= 0 || hp2 <= 0){
                            primaryStage.close();
                            if (hp <= 0){
@@ -262,7 +291,7 @@ public class GameManager {
             animationball.play();
 
 
-
+             //Boton de spacio para iniciar la lanzada de misiles, escape para pausar el juego si no estas en pregunta y p para reaundarlo
             scene.setOnKeyPressed(new EventHandler<KeyEvent>(){
                 public void handle(KeyEvent event){
                     switch(event.getCode()){

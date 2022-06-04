@@ -6,6 +6,10 @@ import javax.swing.JOptionPane;
 
 
 public class Preguntas {
+    /**
+     * Crea una lista Mapa con 65 preguntas sobre Java
+     * @return Devuelve el mapa para posteriormente dar respuestas a las preguntas
+     */
      public static Map crearLista(){
         Map<Integer, String> map = new HashMap<>();
         //Sección de casteo
@@ -83,11 +87,23 @@ public class Preguntas {
         return map;
     }
 
+    /**
+     * Da preguntas a la ventana de JOptionPane.
+     * @param code El codigo del Map
+     * @param mapa El Map que consultamos
+     * @return La pregunta que consigue
+     */
     public static String darPreguntas(int code, Map mapa){
         String pregunta = (String) mapa.get(code);
         return  pregunta;
     }
 
+    /**
+     * Sivve para comprobar si la respuesta que da la persona es correcta o incorrecta
+     * @param code El codigo de la pregunta
+     * @param respuesta La respuesta dependiendo de si es correcta o no
+     * @return Verdadero si ha hacertado, falso si no
+     */
     public static boolean comprobarRespuesta(int code, String respuesta){
       boolean correcion = false;
         switch (code){
