@@ -1,5 +1,7 @@
 package connection;
 
+import javafx.scene.control.Tab;
+
 import java.sql.*;
 import javax.swing.JOptionPane;
 
@@ -53,7 +55,7 @@ public class Conexion {
         this.nombreTabla = nombreTabla;
         try {
             String sql ="CREATE TABLE IF NOT EXISTS " + nombreTabla + " "
-                    + "(NOMBRE TEXT NOT NULL,"
+                    + "(NOMBRE TEXT PRIMARY KEY NOT NULL,"
                     + "SCORE INT NOT NULL)";
 
             sentence.execute(sql);
@@ -100,21 +102,67 @@ public class Conexion {
              Class.forName("org.sqlite.JDBC");
         c = DriverManager.getConnection("jdbc:sqlite:src/connection/exceptionRun.db");
              PreparedStatement st = c.prepareStatement("select * from Puntuaciones");
-           
-            
+
             rs = st.executeQuery();
             while (rs.next()) {
-               
+               Tabla.insercionTabla(rs.getString("NOMBRE"), rs.getString("SCORE"), null, null, null);
                 System.out.println(rs.getString("NOMBRE"));
                 System.out.println(rs.getString("SCORE"));
             }
- 
-           
+
+       st.close();
        rs.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
+    }
+
+    public String consultarNombre(String nombreTabla) throws SQLException, ClassNotFoundException {
+
+        String nombre = null;
+        try {
+
+            String sql ="select * from Puntuaciones";
+
+
+            rs = sentence.executeQuery(sql);
+            while (rs.next()) {
+
+                 nombre = rs.getString(1);
+
+            }
+
+
+            rs.close();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+       return nombre;
+    }
+
+    public String consultarVida(String nombreTabla) throws SQLException, ClassNotFoundException {
+
+        String vida = null;
+        try {
+
+            String sql ="select * from Puntuaciones";
+
+
+            rs = sentence.executeQuery(sql);
+            while (rs.next()) {
+
+                vida = rs.getString(2);
+            }
+
+
+            rs.close();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return vida;
     }
 
 }

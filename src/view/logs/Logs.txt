@@ -2128,3 +2128,82 @@ b)substring().
 c)partition(). 
 d).separate()
 Con el código: 12]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Para conseguir un caracter de un String? 
+a)charIn(). 
+b)charAt(). 
+c)charOut(). 
+d).charPatt()
+Con el código: 15]
+[Tu respuesta: d
+Fue la opción: correcta
+La pregunta fue: length() en un String que nos da? 
+a)Los caracteres del String. 
+b)El codigo asscii del String. 
+c)No nos da nada. 
+d)La longitud del String.
+Con el código: 20]
+[Tu respuesta: a
+Fue la opción: correcta
+La pregunta fue: Se puede hacer casteo de short a byte? 
+a)Si. 
+b)No. 
+c)No es obligatorio pero puedes. 
+Con el código: 3]
+[Tu respuesta: c
+Fue la opción: incorrecta
+La pregunta fue: La papelera de java que es? 
+a)Existe en el java default. 
+b)Hay que añadir el java.util.trash. 
+c)Ninguna es correcta. 
+d)Hay que añadir el java.trash
+Con el código: 65]
+[Tu respuesta: a
+Fue la opción: correcta
+La pregunta fue: Que viene en los archivos de Bytes serializado por defecto? 
+a)Datos primitivos + String. 
+b)Datos primitivos. 
+c)Los String. 
+d)Clases operadas por nosotros.
+Con el código: 25]
+[Tu respuesta: D
+Fue la opción: incorrecta
+La pregunta fue: Si te digo que estas preguntas estan hechas con una Coleccion y que cada una tiene una clave, que uso? 
+a)Set. 
+b)List. 
+c)Queue. 
+d)Map.
+Con el código: 58]
+[Tu respuesta: a
+Fue la opción: correcta
+La pregunta fue: Como se llama la comunicación entre el origen y el destino de un Fichero? 
+a)Flujo o Stream. 
+b)Flujo. 
+c)No tiene nombre 
+d)Stream.
+Con el código: 21]
+[Tu respuesta: 3
+Fue la opción: incorrecta
+La pregunta fue: Cuantos pasos tenemos que hacer para tratar un Fichero? 
+a)1. 
+b)2. 
+c)3. 
+d)4.
+Con el código: 27]
+[Tu respuesta: A
+Fue la opción: incorrecta
+La pregunta fue: Existe el split()? 
+a)Existe en StringBuilder. 
+b)No en String. 
+c)No existe. 
+d)Si en String.
+Con el código: 18]
+[Tu respuesta: c
+Fue la opción: correcta
+La pregunta fue: Cuantos pasos tenemos que hacer para tratar un Fichero? 
+a)1. 
+b)2. 
+c)3. 
+d)4.
+Con el código: 27]
