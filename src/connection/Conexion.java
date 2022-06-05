@@ -40,15 +40,6 @@ public class Conexion {
         return instance;
     }
 
-    /*public Conexion(Statement sentence, Connection c, String nombreTabla) {
-        this.sentence = sentence;
-        this.c = c;
-        this.nombreTabla = nombreTabla;
-    }*/
-
-    //public Conexion() {
-      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    //}
 
     //Código:
     public void crearBase(String nombreTabla) throws SQLException {

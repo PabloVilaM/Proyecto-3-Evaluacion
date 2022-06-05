@@ -151,6 +151,7 @@ public class PongMulti {
                         }
                     }
 
+                    //Todo esto generá los eventos randoms para hacer todo mas divertido en el Pong
                     if (temp.getSegundos() == 0){
                         int numero =  (int)(Math.random()*4+1);
                         System.out.println(numero);;

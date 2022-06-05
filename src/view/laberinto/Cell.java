@@ -10,6 +10,7 @@ public class Cell {
     private boolean[] walls;
     private boolean visited;
 
+    //Lo que hace la funcion de celdad esta todo explicado al princio del Maze, para mayor simplicidad. Se podria decir que van juntos
     public Cell(int x, int y) {
         super();
         this.x = x;

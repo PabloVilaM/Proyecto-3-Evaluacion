@@ -22,6 +22,17 @@ public class Maze extends Group {
         this(rows, cols, 20);
     }
 
+    /**
+     * Funcion del algoritmo que crea el laberinto. El funcionamiento del algoritmo es "simple", el algoritmo
+     * detecta si hay vecinos no visitados, en caso de haber va a el y borra la pared por la que pasa, así todo
+     * el rato. Esto hace que no modifique nada por lo que no ha pasado dado que si una celda ya esta en su "stack"
+     * de celdas visitadas hace que no modifique a menos que este encerrado, que entonces vuelve para atras hasta
+     * que en el stack de celdas no visitadas haya una. Cuando se acaba el laberinto vacia el stack entero porque le
+     * da que todas fueron visitadas
+     * @param cols numero de columnas
+     * @param rows numero de filas
+     * @param scale escala
+     */
     public Maze(int cols, int rows, double scale) {
         this.stack = new Stack<Cell>();
         this.grid = new ArrayList<Cell>();
@@ -73,6 +84,9 @@ public class Maze extends Group {
         return endPoint;
     }
 
+    /**
+     * Funcion del algoritmo que se encarga de pintar los muros
+     */
     private void draw() {
         double thickness = scale / 16;
         double length = scale + thickness;

@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import connection.Registro;
 import connection.Tabla;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -112,8 +111,7 @@ public class ViewManager {
         crearBotonExtraPong2();
         crearBotonScores();
         crearBotonLaberinto();
-        loginBoton();
-        registerBoton();
+
     }
     //CREAMOS BOTON SE LO PASAMOS AL METODO DE AÑADIR LOS BOTONES
 //        INSTANCIAMOS OBJETO DE LA CLASE DONDE TENEMOS EL JUEGO
@@ -303,45 +301,5 @@ public class ViewManager {
         });
     }
 
-    private void loginBoton (){
-        JuegoBotones botonScores = new JuegoBotones("Log");
-
-
-        botonScores.setLayoutX(850);
-        botonScores.setLayoutY(25);
-        botonScores.setScaleX(0.5);
-        botonScores.setStyle("-fx-background-color: transparent; -fx-background-image: url('/modelado/recursos/blue_button00.png');");
-        mainPane.getChildren().add(botonScores);
-
-        botonScores.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-
-
-
-
-            }
-        });
-    }
-
-    private void registerBoton (){
-        JuegoBotones botonScores = new JuegoBotones("Reg");
-
-
-        botonScores.setLayoutX(850);
-        botonScores.setLayoutY(90);
-        botonScores.setScaleX(0.5);
-        botonScores.setStyle("-fx-background-color: transparent; -fx-background-image: url('/modelado/recursos/blue_button00.png');");
-        mainPane.getChildren().add(botonScores);
-
-        botonScores.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-
-                Registro.crearVentana();
-
-            }
-        });
-    }
 
 }

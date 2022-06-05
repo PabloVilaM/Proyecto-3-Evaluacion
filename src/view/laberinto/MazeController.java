@@ -22,6 +22,10 @@ public class MazeController {
     private Timeline animationball;
     //Frames por segundo
     private float segundos = 0.017f;
+
+    /**
+     * Crea la ventana donde se va a trabajar el laberinto.
+     */
     public void iniciar(){
         AnchorPane root = new AnchorPane();
         Scene scene = new Scene(root,1920, 1090);
@@ -67,6 +71,10 @@ public class MazeController {
 
     }
 
+    /**
+     * Todos los controles de movimiento, incluido en las variables normales, arriba abajo w s etc..
+     * @param scene La escena en lka que se usa
+     */
     void setupControls(Scene scene) {
         scene.setOnKeyPressed(e -> {
             switch (e.getCode()) {
@@ -129,6 +137,9 @@ public class MazeController {
         });
     }
 
+    /**
+     * Se detiene el temporizador y se vuelve invisible el frame
+     */
    public static void cerrarStage(){
         primaryStage.close();
 
