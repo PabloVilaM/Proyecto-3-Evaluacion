@@ -1,7 +1,28 @@
 # Proyecto-3-Evaluacion
 
-- El proyecto por ahora consta de 3 partes, trivia, pong sp y pong mp. Cada una de ellas apoyadas en un menú de GUI con implementación de bases de datos
+- El proyecto por ahora consta de 4 partes, trivia, pong sp y pong mp, y el laberinto. Cada una con sus especialidades y cada una 
 
+
+## Trivia
+- Juego de preguntas rápidas en las que tienes 15 para responder.
+- Preguntas enfocadas en programación.
+- Musica implementada.
+- Bases de Datos implementada para un sistema de ranking.
+
+
+## Laberinto
+- Implementado mediante un algoritmo.
+- Trabajado de manera que sea escalable y se genere bien gracias al algoritmo.
+- Musica implementada.
+
+## Pong SP
+- Simple, objetos con hitbox y vas opteniendo puntuación cada vez que le das.
+- Musica implementada.
+
+#Pong MP
+- 1 para 1 contra un compañero con W,A,D,S y las flechas.
+- Eventos randoms añadidos le añade diversión.
+- Música implementada.
 
 ## Notas
-- Por ahora, subimos todos los archivos de la 2ªEvaluación para poder trabajar mejor.
+- Considerar que para el tema de GitHub soy solo 1 persona dado que el compañero no tiene Cod.
