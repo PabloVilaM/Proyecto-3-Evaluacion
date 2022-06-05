@@ -1,5 +1,6 @@
 package view.laberinto;
 
+import connection.Conexion;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
@@ -8,6 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+
+import javax.swing.*;
+import java.sql.SQLException;
 
 public class Exit extends Rectangle {
     boolean finish = false;
