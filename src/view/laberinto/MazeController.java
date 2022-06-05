@@ -10,7 +10,10 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import view.Tiempo;
 
+import javax.sound.sampled.*;
 import javax.swing.*;
+import java.io.File;
+import java.io.IOException;
 
 public class MazeController {
     static Stage primaryStage = new Stage();
@@ -22,11 +25,31 @@ public class MazeController {
     private Timeline animationball;
     //Frames por segundo
     private float segundos = 0.017f;
+    //Un objeto Clip, sirve para dar audio al juego
+    private static Clip clip;
 
+    /**
+     * Clase por la cual se añade musica al juego, el clip pertenecera a la clase para luego pausarlo
+     */
+    private void iniciarMusica(){
+        try {
+            AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File("src/musica/Maze.wav"));
+            clip = AudioSystem.getClip();
+            clip.open(audioInput);
+            clip.start();
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
+    }
     /**
      * Crea la ventana donde se va a trabajar el laberinto.
      */
     public void iniciar(){
+        iniciarMusica();
         AnchorPane root = new AnchorPane();
         Scene scene = new Scene(root,1920, 1090);
 
@@ -46,7 +69,7 @@ public class MazeController {
         // Exit
         Exit exit = new Exit(mazo.getEndPoint(), 30);
         root.getChildren().add(exit);
-        temp.Contar(200);
+        temp.Contar(170);
 
         timeline = new Timeline(
                 // 0.017 ~= 60 FPS
@@ -55,9 +78,11 @@ public class MazeController {
                         if (temp.getSegundos() == 0){
                            timeline.stop();
                            primaryStage.close();
+                           clip.stop();
                             JFrame frame = temp.getJframe();
                             temp.Detener();
                             frame.setVisible(false);
+                            JOptionPane.showMessageDialog(null,"Perdiste");
                         }
 
                         player.update();
@@ -129,6 +154,7 @@ public class MazeController {
                             : --Player.horizontalDirection;
                     break;
                 case ESCAPE:
+                    clip.stop();
                     cerrarStage();
                     break;
                 default:
@@ -148,4 +174,7 @@ public class MazeController {
        frame.setVisible(false);
    }
 
+    public static Clip getClip() {
+        return clip;
+    }
 }

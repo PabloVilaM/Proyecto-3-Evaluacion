@@ -231,7 +231,7 @@ public class ViewManager {
     }
     //         ESTABLECEMOS UN FONDO DEL PANEL PRINCIPAL
     private void crearFondo(){
-        BackgroundImage myBI= new BackgroundImage(new Image("file:src/view/menu/fondoMenu.jpg",1024,768,false,true),
+        BackgroundImage myBI= new BackgroundImage(new Image("file:src/view/menu/Exception_Hunter.png",1024,768,false,true),
                 BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         mainPane.setBackground(new Background(myBI));

@@ -29,6 +29,8 @@ import javax.sound.sampled.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import static toolboxpablo.ToolBoxPablo.*;
+
 
 public class GameManager {
 
@@ -60,7 +62,7 @@ public class GameManager {
     //Tu HP o vida en español
     private   int hp=99;
     //El hp del enemigo o vida en español
-    private   int hp2=5;
+    private   int hp2=99;
     //Objeto "core" dado que es quien mantiene la animacion, en una timeline de duracion infinita hasta que nosotros queramos
     private Timeline animationball;
 
@@ -211,10 +213,10 @@ public class GameManager {
 
                             int numero = (int)(Math.random()*65+1);
                             Map<Integer, String> map = Preguntas.crearLista();
-                            System.out.println(numero);
+                            leerInt(numero);
                             String pregunta = Preguntas.darPreguntas(numero, map);
                             Tiempo temp = new Tiempo();
-                            temp.Contar(10);
+                            temp.Contar(15);
                             String respuesta = JOptionPane.showInputDialog(pregunta);
                             boolean correcion = Preguntas.comprobarRespuesta(numero, respuesta);
                             if (correcion == false || correcion == true){
@@ -285,7 +287,10 @@ public class GameManager {
                        }
 
 
-
+                        primaryStage.setOnCloseRequest(evt -> {
+                            // Para la musica
+                            clip.stop();
+                        });
 
                     })
             );

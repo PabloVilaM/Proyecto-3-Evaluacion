@@ -54,6 +54,8 @@ public class PongMulti {
     private int score2 = 0;
     //La musica
     private Clip clip;
+    //Segundos
+    int segundosTim = 7;
 
     private void iniciarMusica(){
         try {
@@ -139,7 +141,7 @@ public class PongMulti {
         root2.getChildren().add(eventactual);
 
         TimerEventos temp = new TimerEventos();
-        temp.Contar(5);
+        temp.Contar(segundosTim);
 
        iniciarMusica();
 
@@ -186,8 +188,7 @@ public class PongMulti {
 
                     //Todo esto generá los eventos randoms para hacer todo mas divertido en el Pong
                     if (temp.getSegundos() == 0){
-                        int numero =  (int)(Math.random()*34+1);
-                        System.out.println(numero);;
+                        int numero =  (int)(Math.random()*42+1);
                         switch (numero){
                             case 1:
                                 rect.setHeight(100);
@@ -335,12 +336,48 @@ public class PongMulti {
                                 rect2.setFill(Color.BLACK);
                                 eventactual.setText("COLOR");
                                 break;
-
-
-
-
+                            case 35:
+                                String auxiliar = textTiempo4.getText();
+                                textTiempo4.setText(textTiempo2.getText());
+                                textTiempo2.setText(auxiliar);
+                                eventactual.setText("MOD Texto");
+                                break;
+                            case 36:
+                                textTiempo4.setText("??");
+                                textTiempo2.setText("??");
+                                eventactual.setText("MOD Texto");
+                                break;
+                            case 37:
+                                int numeroString =  (int)(Math.random()*10);
+                                String rand = Integer.toString(numeroString);
+                                int numeroString2 =  (int)(Math.random()*10);
+                                String rando = Integer.toString(numeroString2);
+                                textTiempo4.setText(rand);
+                                textTiempo2.setText(rando);
+                                eventactual.setText("MOD ???");
+                                break;
+                            case 38:
+                                segundosTim = 6;
+                                eventactual.setText("MOD Party");
+                                break;
+                            case 39:
+                                segundosTim = 5;
+                                eventactual.setText("MOD Party");
+                                break;
+                            case 40:
+                                segundosTim = 3;
+                                eventactual.setText("MOD Party");
+                                break;
+                            case 41:
+                                rect.setHeight(10);
+                                eventactual.setText("MOD Pala");
+                                break;
+                            case 42:
+                                rect2.setHeight(10);
+                                eventactual.setText("MOD Pala");
+                                break;
                         }
-                        temp.Contar(5);
+                        temp.Contar(segundosTim);
 
                     }
 
@@ -383,6 +420,12 @@ public class PongMulti {
                         pongStage.close();
                     }
 
+                    //Cuando se envia la solucitud de cerrado apaga la musica.
+                    pongStage.setOnCloseRequest(evt -> {
+                        // Para la musica
+                        animationPong.stop();
+                        clip.stop();
+                    });
 
                     calcularVelocidad(conseguirStickCollision(circleball,rect));
                     calcularVelocidad2(conseguirStickCollision(circleball,rect2));
@@ -514,7 +557,4 @@ public class PongMulti {
         }
     }
 
-    private void iniciarEvento(TimerEventos temp, Rectangle rectangle){
-
-    }
 }

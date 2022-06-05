@@ -32,7 +32,7 @@ public class Tiempo {
                 jframe.setVisible(false);
             }
              jlabel.setText("Tiempo restante:" + segundos);
-            System.out.println("segundo: " + segundos);
+
         }
     }
     //Crea un timer, inicia segundos a 0 y comienza a contar

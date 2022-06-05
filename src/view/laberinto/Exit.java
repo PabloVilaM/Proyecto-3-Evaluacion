@@ -10,6 +10,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.sql.SQLException;
 
@@ -47,7 +48,9 @@ public class Exit extends Rectangle {
     public void update() {
         if (hasCollision() && !finish) {
             finish = true;
-
+            JOptionPane.showMessageDialog(null,"Ganaste");
+            Clip clip = MazeController.getClip();
+            clip.stop();
             MazeController.cerrarStage();
         }
     }
