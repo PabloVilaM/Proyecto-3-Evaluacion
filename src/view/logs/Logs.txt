@@ -2207,3 +2207,269 @@ b)2.
 c)3. 
 d)4.
 Con el código: 27]
+[Tu respuesta: b
+Fue la opción: correcta
+La pregunta fue: Que clases conocemos dentro de Set? 
+a)HashSet. 
+b)A y D son ciertas. 
+c)HasSet. 
+d)TreeSet.
+Con el código: 52]
+[Tu respuesta: a
+Fue la opción: correcta
+La pregunta fue: Cuantas interfaces se pueden implementar en una clase? 
+a)Infinitas. 
+b)1. 
+c)2. 
+d)Ninguna.)
+Con el código: 42]
+[Tu respuesta: b
+Fue la opción: correcta
+La pregunta fue: Que estructuras de colecciones conocemos? 
+a)FIFO y FITO. 
+b)FIFO y FILO. 
+c)FICO y FIFO. 
+d)FIFO y FIMO
+Con el código: 54]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Se trata con la misma clase la escritura y la lectura? 
+a)Si. 
+b)No es obligatorio. 
+c)No.
+Con el código: 28]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Cual caracteristica es correcta del catch? 
+a)Puede haber infinitos por un try. 
+b)Todas son ciertas. 
+c)Sirve para capturar un error. 
+d)No puede haber codigo entre ellos.
+Con el código: 31]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Se puede hacer casteo de byte a short? 
+a)Si. 
+b)No. 
+c)No es obligatorio pero puedes.
+Con el código: 10]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Como comparamos (por ejemplo en un if) dos Strings? 
+a)Con un ==. 
+b)Con un compareTo(). 
+c)No se puede. 
+d)Con equals()
+Con el código: 19]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Que se puede utilizar para remplazar algun caracter por otro especificado? 
+a)substitute(). 
+b)replace(). 
+c)rerun(). 
+d).supersede()
+Con el código: 14]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Cual caracteristica es correcta del catch? 
+a)Puede haber infinitos por un try. 
+b)Todas son ciertas. 
+c)Sirve para capturar un error. 
+d)No puede haber codigo entre ellos.
+Con el código: 31]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Se puede hacer casteo de byte a short? 
+a)Si. 
+b)No. 
+c)No es obligatorio pero puedes.
+Con el código: 10]
+[Tu respuesta:  a
+Fue la opción: incorrecta
+La pregunta fue: En un diagrama de clases las interfaces se unen con... 
+a)Lineas regulares. 
+b)Ninguna es correcta. 
+c)Lineas discontinuas. 
+d)Lineas en ziczac
+Con el código: 46]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Que se implementa para las interfaces en Java 9? 
+a)Metodos protected. 
+b)Metodos static. 
+c)Metodos private. 
+d)Metodos default.
+Con el código: 49]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Se puede hacer casteo de byte a short? 
+a)Si. 
+b)No. 
+c)No es obligatorio pero puedes.
+Con el código: 10]
+[Tu respuesta: b
+Fue la opción: incorrecta
+La pregunta fue: En un diagrama de clases las interfaces se unen con... 
+a)Lineas regulares. 
+b)Ninguna es correcta. 
+c)Lineas discontinuas. 
+d)Lineas en ziczac
+Con el código: 46]
+[Tu respuesta: a
+Fue la opción: correcta
+La pregunta fue: Que tipo de memoria usa un array? 
+a)Estatica. 
+b)Dinamica. 
+c)Movible. 
+d)Quieta.
+Con el código: 62]
+[Tu respuesta: A
+Fue la opción: incorrecta
+La pregunta fue: Una caracteristica del ArrayList es: 
+a)Busqueda lenta elimación rápida. 
+b)Busqueda rapída elimacion lenta. 
+c)Busquedas y elimaciones rapidas. 
+d)Busquedas y elimaciones lentas
+Con el código: 55]
+[Tu respuesta: A
+Fue la opción: incorrecta
+La pregunta fue: En un diagrama de clases las interfaces se unen con... 
+a)Lineas regulares. 
+b)Ninguna es correcta. 
+c)Lineas discontinuas. 
+d)Lineas en ziczac
+Con el código: 46]
+[Tu respuesta: b
+Fue la opción: incorrecta
+La pregunta fue: Se puede hacer casteo de short a byte? 
+a)Si. 
+b)No. 
+c)No es obligatorio pero puedes. 
+Con el código: 3]
+[Tu respuesta: c
+Fue la opción: incorrecta
+La pregunta fue: Que tipo de memoria usa un array? 
+a)Estatica. 
+b)Dinamica. 
+c)Movible. 
+d)Quieta.
+Con el código: 62]
+[Tu respuesta: b
+Fue la opción: correcta
+La pregunta fue: Cual caracteristica es correcta del finally? 
+a)Es obligatoria. 
+b)Es opcional. 
+c)No se ejecuta siempre. 
+d)Trata el error.
+Con el código: 32]
+[Tu respuesta: b
+Fue la opción: correcta
+La pregunta fue: Para conseguir un caracter de un String? 
+a)charIn(). 
+b)charAt(). 
+c)charOut(). 
+d).charPatt()
+Con el código: 15]
+[Tu respuesta: c
+Fue la opción: correcta
+La pregunta fue: Un metodo abstracto... 
+a)Debe tener minimo un metodo abstract. 
+b)Esta marcado con abstract. 
+c)Todas son ciertas. 
+d)Lleva normalmente metodos vacios.
+Con el código: 47]
+[Tu respuesta: c
+Fue la opción: correcta
+La pregunta fue: Un metodo abstracto... 
+a)Debe tener minimo un metodo abstract. 
+b)Esta marcado con abstract. 
+c)Todas son ciertas. 
+d)Lleva normalmente metodos vacios.
+Con el código: 47]
+[Tu respuesta: b
+Fue la opción: incorrecta
+La pregunta fue: Que viene en los archivos de Bytes serializado por defecto? 
+a)Datos primitivos + String. 
+b)Datos primitivos. 
+c)Los String. 
+d)Clases operadas por nosotros.
+Con el código: 25]
+[Tu respuesta: a
+Fue la opción: correcta
+La pregunta fue: Se puede hacer casteo de int a double? 
+a)Si. 
+b)No. 
+c)No es obligatorio pero puedes.
+Con el código: 2]
+[Tu respuesta: d
+Fue la opción: correcta
+La pregunta fue: Que se trata en la clase de Error. 
+a)Hardware. 
+b)Maquinas Virtuales. 
+c)Software. 
+d)A y B son correctas.
+Con el código: 38]
+[Tu respuesta: a
+Fue la opción: correcta
+La pregunta fue: Que terminos existen dentro de una interfaz? 
+a)Todas son ciertas. 
+b)static. 
+c)abstract. 
+d)default.
+Con el código: 43]
+[Tu respuesta: b
+Fue la opción: incorrecta
+La pregunta fue: Cuantos pasos tenemos que hacer para tratar un Fichero? 
+a)1. 
+b)2. 
+c)3. 
+d)4.
+Con el código: 27]
+[Tu respuesta: a
+Fue la opción: correcta
+La pregunta fue: Es importante cerrar el flujo de un Fichero? 
+a)Si para volver al último lugar que trataste. 
+b)No porque el archivo seguira igual. 
+c)Si porque luego no se puede abrir. 
+d)No porque se cierra solo. 
+Con el código: 22]
+[Tu respuesta: b
+Fue la opción: incorrecta
+La pregunta fue: Si te digo que estas preguntas estan hechas con una Coleccion y que cada una tiene una clave, que uso? 
+a)Set. 
+b)List. 
+c)Queue. 
+d)Map.
+Con el código: 58]
+[Tu respuesta: b
+Fue la opción: incorrecta
+La pregunta fue: Que viene en los archivos de Bytes serializado por defecto? 
+a)Datos primitivos + String. 
+b)Datos primitivos. 
+c)Los String. 
+d)Clases operadas por nosotros.
+Con el código: 25]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Caracteristicas de throws new? 
+a)Lanza el error a otra clase. 
+b)Tratar el error. 
+c)Se pone en el nombre de la clase. 
+d)A y C son correctas
+Con el código: 36]
+[Tu respuesta: a
+Fue la opción: correcta
+La pregunta fue: Cuantas interfaces se pueden implementar en una clase? 
+a)Infinitas. 
+b)1. 
+c)2. 
+d)Ninguna.)
+Con el código: 42]
+[Tu respuesta: a
+Fue la opción: correcta
+La pregunta fue: Que tipos de Array hemos dado? 
+a)bidimensionales y unidimensionales. 
+b)ArrayList y Array. 
+c)unidimensionales y tablas. 
+d)ArrayList y tablas.
+Con el código: 61]

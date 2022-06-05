@@ -8,6 +8,8 @@ import java.util.TimerTask;
 public class TimerEventos {
     //El timer a crear
     private Timer timer = new Timer();
+
+
     //El tiempo restante
     private int segundos=0;
     //El tiempo que sobra al restante para llegar a 10
@@ -48,6 +50,10 @@ public class TimerEventos {
     //Metodo que retorna los segundosSobrantes
     public int getSobrante() {
         return sobrante;
+    }
+
+    public void setSegundos(int segundos) {
+        this.segundos = segundos;
     }
 
 }

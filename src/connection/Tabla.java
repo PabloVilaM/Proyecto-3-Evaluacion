@@ -50,6 +50,7 @@ public class Tabla {
         frame.setVisible(true);
         btnAadirLnea.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
+                model.setRowCount(0);
                 Conexion c = Conexion.getInstance();
                 try {
                     c.consultar("Puntuaciones");
@@ -69,28 +70,6 @@ public class Tabla {
         });
     }
 
-   /* public static void insercionTabla(String nombre, String vida){
-
-        btnAadirLnea.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                Conexion c = Conexion.getInstance();
-                try {
-                    c.consultar("Puntuaciones");
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
-
-
-
-
-
-
-            }
-        });
-
-    }*/
 
     public  static void insertarColumna(String nombre, String vida){
         Object[] aux = {nombre, vida};

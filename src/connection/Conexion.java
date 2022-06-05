@@ -93,13 +93,11 @@ public class Conexion {
         try {
              Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:src/connection/exceptionRun.db");
-             PreparedStatement st = c.prepareStatement("select * from Puntuaciones");
+             PreparedStatement st = c.prepareStatement("select * from Puntuaciones ORDER BY SCORE DESC");
 
             rs = st.executeQuery();
             while (rs.next()) {
                Tabla.insertarColumna(rs.getString("NOMBRE"), rs.getString("SCORE"));
-                System.out.println(rs.getString("NOMBRE"));
-                System.out.println(rs.getString("SCORE"));
             }
 
        st.close();
