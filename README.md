@@ -26,4 +26,4 @@
 
 ## Notas
 - Considerar que para el tema de GitHub soy solo 1 persona dado que el compañero no tiene Cod.
-- https://drive.google.com/file/d/1UGFQsTYZpuweqjfkEwG5VnaQTf2_Qzsf/view?usp=sharing Diagrama de Flujo
+
