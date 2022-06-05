@@ -2207,3 +2207,103 @@ b)2.
 c)3. 
 d)4.
 Con el código: 27]
+[Tu respuesta: b
+Fue la opción: correcta
+La pregunta fue: Que clases conocemos dentro de Set? 
+a)HashSet. 
+b)A y D son ciertas. 
+c)HasSet. 
+d)TreeSet.
+Con el código: 52]
+[Tu respuesta: a
+Fue la opción: correcta
+La pregunta fue: Cuantas interfaces se pueden implementar en una clase? 
+a)Infinitas. 
+b)1. 
+c)2. 
+d)Ninguna.)
+Con el código: 42]
+[Tu respuesta: b
+Fue la opción: correcta
+La pregunta fue: Que estructuras de colecciones conocemos? 
+a)FIFO y FITO. 
+b)FIFO y FILO. 
+c)FICO y FIFO. 
+d)FIFO y FIMO
+Con el código: 54]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Se trata con la misma clase la escritura y la lectura? 
+a)Si. 
+b)No es obligatorio. 
+c)No.
+Con el código: 28]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Cual caracteristica es correcta del catch? 
+a)Puede haber infinitos por un try. 
+b)Todas son ciertas. 
+c)Sirve para capturar un error. 
+d)No puede haber codigo entre ellos.
+Con el código: 31]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Se puede hacer casteo de byte a short? 
+a)Si. 
+b)No. 
+c)No es obligatorio pero puedes.
+Con el código: 10]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Como comparamos (por ejemplo en un if) dos Strings? 
+a)Con un ==. 
+b)Con un compareTo(). 
+c)No se puede. 
+d)Con equals()
+Con el código: 19]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Que se puede utilizar para remplazar algun caracter por otro especificado? 
+a)substitute(). 
+b)replace(). 
+c)rerun(). 
+d).supersede()
+Con el código: 14]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Cual caracteristica es correcta del catch? 
+a)Puede haber infinitos por un try. 
+b)Todas son ciertas. 
+c)Sirve para capturar un error. 
+d)No puede haber codigo entre ellos.
+Con el código: 31]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Se puede hacer casteo de byte a short? 
+a)Si. 
+b)No. 
+c)No es obligatorio pero puedes.
+Con el código: 10]
+[Tu respuesta:  a
+Fue la opción: incorrecta
+La pregunta fue: En un diagrama de clases las interfaces se unen con... 
+a)Lineas regulares. 
+b)Ninguna es correcta. 
+c)Lineas discontinuas. 
+d)Lineas en ziczac
+Con el código: 46]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Que se implementa para las interfaces en Java 9? 
+a)Metodos protected. 
+b)Metodos static. 
+c)Metodos private. 
+d)Metodos default.
+Con el código: 49]
+[Tu respuesta: a
+Fue la opción: incorrecta
+La pregunta fue: Se puede hacer casteo de byte a short? 
+a)Si. 
+b)No. 
+c)No es obligatorio pero puedes.
+Con el código: 10]

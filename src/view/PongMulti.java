@@ -57,7 +57,6 @@ public class PongMulti {
     public void inicializarJuegoPong(){
         Pane root2 = new Pane();
         Scene scene2 = new Scene(root2,TAMXP, TAMYP, Color.BLACK);
-
         scene2.setFill(Color.BLACK);
         Stage pongStage = new Stage();
         pongStage.setTitle("Pong");
@@ -153,9 +152,9 @@ public class PongMulti {
 
                     //Todo esto generá los eventos randoms para hacer todo mas divertido en el Pong
                     if (temp.getSegundos() == 0){
-                        int numero =  (int)(Math.random()*4+1);
+                        int numero =  (int)(Math.random()*15+1);
                         System.out.println(numero);;
-                        switch (numero){
+                        switch (31){
                             case 1:
                                 rect.setHeight(100);
                                 break;
@@ -173,6 +172,103 @@ public class PongMulti {
                                 break;
                             case 6:
                                 rect2.setHeight(25);
+                                break;
+                            case 7:
+                                rect.setWidth(14);
+                                break;
+                            case 8:
+                                rect2.setWidth(14);
+                                break;
+                            case 9:
+                                rect.setWidth(7);
+                                break;
+                            case 10:
+                                rect2.setWidth(7);
+                                break;
+                            case 11:
+                                rect.setWidth(3);
+                                break;
+                            case 12:
+                                rect2.setWidth(3);
+                                break;
+                            case 13:
+                                stickPosY = 100;
+                                StickPosEnemyY = 100;
+                                break;
+                            case 14:
+                                stickPosY = 200;
+                                StickPosEnemyY = 200;
+                                break;
+                            case 15:
+                                stickPosY = 300;
+                                StickPosEnemyY = 300;
+                                break;
+                            case 16:
+                                ballCurrentSpeedX = 7;
+                                ballCurrentSpeedY = 7;
+                                break;
+                            case 17:
+                                ballCurrentSpeedX = 10;
+                                ballCurrentSpeedY = 10;
+                                break;
+                            case 18:
+                                ballCurrentSpeedX = 5;
+                                ballCurrentSpeedY = 5;
+                                break;
+                            case 19:
+                                ballCurrentSpeedX = -7;
+                                ballCurrentSpeedY = -7;
+                                break;
+                            case 20:
+                                ballCurrentSpeedX = -10;
+                                ballCurrentSpeedY = -10;
+                                break;
+                            case 21:
+                                ballCurrentSpeedX = -5;
+                                ballCurrentSpeedY = -5;
+                                break;
+                            case 22:
+                                ballCurrentSpeedX = 10;
+                                break;
+                            case 23:
+                                ballCurrentSpeedX = 5;
+                                break;
+                            case 24:
+                                ballCurrentSpeedX = 7;
+                                break;
+                            case 25:
+                                ballCurrentSpeedX = -10;
+                                break;
+                            case 26:
+                                ballCurrentSpeedX = -5;
+                                break;
+                            case 27:
+                                ballCurrentSpeedX = -7;
+                                break;
+                            case 28:
+                                ballCenterX = 300;
+                                ballCenterY = 30;
+                                break;
+                            case 29:
+                                circleball.setFill(Color.rgb(254,253,255));
+                                break;
+                            case 30:
+                                rect.setFill(Color.rgb(254,253,255));
+                                break;
+                            case 31:
+                                rect2.setFill(Color.rgb(254,253,255));
+                                break;
+                            case 32:
+                                circleball.setFill(Color.BLACK);
+                                break;
+                            case 33:
+                                rect.setFill(Color.BLACK);
+                                break;
+                            case 34:
+                                rect2.setFill(Color.BLACK);
+                                break;
+
+
                         }
                         temp.Contar(5);
 

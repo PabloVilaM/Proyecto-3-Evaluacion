@@ -50,6 +50,7 @@ public class Tabla {
         frame.setVisible(true);
         btnAadirLnea.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
+                model.setRowCount(0);
                 Conexion c = Conexion.getInstance();
                 try {
                     c.consultar("Puntuaciones");
