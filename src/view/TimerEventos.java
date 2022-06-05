@@ -25,7 +25,7 @@ public class TimerEventos {
             if (segundos==0){
                 Detener();
             }
-
+            System.out.println("segundo: " + segundos);
         }
     }
     //Crea un timer, inicia segundos a 0 y comienza a contar
