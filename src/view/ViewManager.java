@@ -242,8 +242,6 @@ public class ViewManager {
         Image img3 = new Image("File:beta.png");
 
         ImageView iv3 = new ImageView(img3);
-//       mainPane.getChildren().add(iv1);
-//       mainPane.getChildren().add(iv2);
         mainPane.getChildren().add(iv3);
 
         iv3.setLayoutX(200);

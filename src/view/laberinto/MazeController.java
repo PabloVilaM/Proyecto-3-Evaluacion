@@ -18,13 +18,10 @@ import java.io.IOException;
 public class MazeController {
     static Stage primaryStage = new Stage();
     static Tiempo temp = new Tiempo();
+    //Objeto core que mantiene la timeline unlimited.
     Timeline timeline;
     int a = 0;
     int b = 0;
-    //Objeto core que mantiene la timeline unlimited.
-    private Timeline animationball;
-    //Frames por segundo
-    private float segundos = 0.017f;
     //Un objeto Clip, sirve para dar audio al juego
     private static Clip clip;
 

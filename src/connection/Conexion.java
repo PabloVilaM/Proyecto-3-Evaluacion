@@ -5,10 +5,7 @@ import javafx.scene.control.Tab;
 import java.sql.*;
 
 
-/**
- *
- * @author celta
- */
+
 public class Conexion {
 
     private static Conexion instance;

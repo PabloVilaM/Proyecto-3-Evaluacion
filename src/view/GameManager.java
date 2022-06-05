@@ -250,9 +250,6 @@ public class GameManager {
                            if (hp <= 0){
                                String alias=JOptionPane.showInputDialog("GAME OVER! TYPE YOUR AKA");
                                String auxHp= hp+"";
-                               Statement sentence = null;
-                               Connection c = null;
-                               //Conexion cn = new Conexion(sentence, c, "Puntuaciones");
                                Conexion cn = Conexion.getInstance();
                                animationball.stop();
                                clip.stop();
@@ -268,9 +265,6 @@ public class GameManager {
                            else if (hp2 <= 0){
                                String alias=JOptionPane.showInputDialog("WINNER! TYPE YOUR AKA");
                                String auxHp= hp+"";
-                               Statement sentence = null;
-                               Connection c = null;
-                               //Conexion cn = new Conexion(sentence, c, "Puntuaciones");
                                Conexion cn = Conexion.getInstance();
                                animationball.stop();
                                clip.stop();

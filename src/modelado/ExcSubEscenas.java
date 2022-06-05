@@ -12,7 +12,6 @@ public class ExcSubEscenas extends SubScene {
 
     private final static String FONT_PATH = "src/modelado/recursos/kenvector_future.tlf";
     private   String BACKGROUND_IMAGE = "File:ayuda.png";
-    //    private final static String BACKGROUND_IMAGE_CREDITOS = "File:creditos.png";
     private  boolean ocultar;
     private boolean subs=true;
 
