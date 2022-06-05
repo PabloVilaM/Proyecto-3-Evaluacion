@@ -11,6 +11,10 @@ import javafx.scene.text.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
+
 public class PongInd {
 
     //El ancho del stick
@@ -41,7 +45,26 @@ public class PongInd {
     private Timeline animationPong;
     //Tamaño del texto de paradas
     private static final double TEXT_SIZE = 15;
+    //Un objeto Clip, sirve para dar audio al juego
+    private Clip clip;
 
+    /**
+     * Clase por la cual se añade musica al juego, el clip pertenecera a la clase para luego pausarlo
+     */
+    private void iniciarMusica(){
+        try {
+            AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File("src/musica/Sp.wav"));
+            clip = AudioSystem.getClip();
+            clip.open(audioInput);
+            clip.start();
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
+    }
     /**
      * Como bien dice el método, establece las cosas relacionadas con el pong, los stick la pelota la ventana el texto
      * las teclas, e incluso los colliders del stick y de la pelota
@@ -77,7 +100,7 @@ public class PongInd {
         textTiempo2.setX(65);
         textTiempo2.setY(20);
         root2.getChildren().add(textTiempo2);
-
+        iniciarMusica();
         animationPong = new Timeline(
                 new KeyFrame(Duration.seconds(segundos), (ActionEvent ae)-> {
                     stickPosY += stickCurrentSpeed;
@@ -123,7 +146,16 @@ public class PongInd {
 
 
                     calcularVelocidad(conseguirStickCollision(circleball,rect));
+
+                    pongStage.setOnCloseRequest(evt -> {
+                        // Para la musica
+                        animationPong.stop();
+                        clip.stop();
+
+                    });
                 })
+
+
         );
 
         scene2.setOnKeyPressed(new EventHandler<KeyEvent>(){
