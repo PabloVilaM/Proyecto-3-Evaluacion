@@ -20,7 +20,7 @@ public class PongMulti {
     //Ancho del stick
     private final int STICK_ANCHO = 7;
     //Altura del stick
-    private final int STICK_ALTURA = 50;
+    private int STICK_ALTURA = 50;
     //Ancho de la pantalla
     private final int TAMXP = 600;
     //Altura de la pantalla
@@ -50,7 +50,10 @@ public class PongMulti {
     //El score 2
     private int score2 = 0;
 
-
+    /**
+     * Como bien dice el método, establece las cosas relacionadas con el pong, los stick la pelota la ventana el texto
+     * las teclas, e incluso los colliders del stick y de la pelota
+     */
     public void inicializarJuegoPong(){
         Pane root2 = new Pane();
         Scene scene2 = new Scene(root2,TAMXP, TAMYP, Color.BLACK);
@@ -102,6 +105,11 @@ public class PongMulti {
         textTiempo4.setY(20);
         root2.getChildren().add(textTiempo4);
 
+        TimerEventos temp = new TimerEventos();
+        temp.Contar(5);
+
+
+
         animationPong = new Timeline(
                 new KeyFrame(Duration.seconds(segundos), (ActionEvent ae)-> {
                     StickPosEnemyY += stickCurrentEnemySpeed;
@@ -143,6 +151,31 @@ public class PongMulti {
                         }
                     }
 
+                    if (temp.getSegundos() == 0){
+                        int numero =  (int)(Math.random()*4+1);
+                        System.out.println(numero);;
+                        switch (numero){
+                            case 1:
+                                rect.setHeight(100);
+                                break;
+                            case 2:
+                                rect2.setHeight(100);
+                                break;
+                            case 3:
+                                rect.setHeight(50);
+                                break;
+                            case 4:
+                                rect2.setHeight(50);
+                                break;
+                            case 5:
+                                rect.setHeight(25);
+                                break;
+                            case 6:
+                                rect2.setHeight(25);
+                        }
+                        temp.Contar(5);
+
+                    }
 
                     Shape colision = Shape.intersect(circleball, rect);
                     Shape colision2 = Shape.intersect(circleball, rect2);
@@ -308,5 +341,9 @@ public class PongMulti {
                 ballCurrentSpeedY = -6;
                 break;
         }
+    }
+
+    private void iniciarEvento(TimerEventos temp, Rectangle rectangle){
+
     }
 }

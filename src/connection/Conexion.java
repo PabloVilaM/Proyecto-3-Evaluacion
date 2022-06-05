@@ -1,5 +1,7 @@
 package connection;
 
+import javafx.scene.control.Tab;
+
 import java.sql.*;
 import javax.swing.JOptionPane;
 
@@ -52,9 +54,10 @@ public class Conexion {
     public void crearBase(String nombreTabla) throws SQLException {
         this.nombreTabla = nombreTabla;
         try {
-            String sql ="CREATE TABLE IF NOT EXISTS " + nombreTabla + " "
-                    + "(NOMBRE TEXT NOT NULL,"
+            String sql ="CREATE TABLE IF NOT EXISTS " + nombreTabla
+                    + "(NOMBRE TEXT PRIMARY KEY NOT NULL,"
                     + "SCORE INT NOT NULL)";
+
 
             sentence.execute(sql);
             sentence.close();
@@ -77,19 +80,19 @@ public class Conexion {
 
     }
 
-    public void insertar(String alias, String vida) throws SQLException, ClassNotFoundException {
+    public void insertar(String alias, String vid) throws SQLException, ClassNotFoundException {
        
         try {
              Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:src/connection/exceptionRun.db");
            sentence = c.createStatement();
             PreparedStatement ps = c.prepareStatement("insert into Puntuaciones values (?, ?)");
-             ps.setString(1, alias);
-            ps.setString(2, vida);
+            ps.setString(1,alias);
+            ps.setString(2,vid);
             ps.executeUpdate();
             ps.close();
         } catch (Exception e) {
-            System.err.println(e.getMessage());
+            System.out.println(e);
         }
 
     }
@@ -98,23 +101,25 @@ public class Conexion {
         
         try {
              Class.forName("org.sqlite.JDBC");
-        c = DriverManager.getConnection("jdbc:sqlite:src/connection/exceptionRun.db");
+            c = DriverManager.getConnection("jdbc:sqlite:src/connection/exceptionRun.db");
              PreparedStatement st = c.prepareStatement("select * from Puntuaciones");
-           
-            
+
             rs = st.executeQuery();
             while (rs.next()) {
-               
+               Tabla.insertarColumna(rs.getString("NOMBRE"), rs.getString("SCORE"));
                 System.out.println(rs.getString("NOMBRE"));
                 System.out.println(rs.getString("SCORE"));
             }
- 
-           
+
+       st.close();
        rs.close();
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
     }
+
+
 
 }
