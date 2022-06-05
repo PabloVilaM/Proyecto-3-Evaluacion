@@ -11,7 +11,10 @@ import javafx.scene.text.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import javax.sound.sampled.*;
 import javax.swing.*;
+import java.io.File;
+import java.io.IOException;
 
 public class PongMulti {
 
@@ -22,7 +25,7 @@ public class PongMulti {
     //Altura del stick
     private int STICK_ALTURA = 50;
     //Ancho de la pantalla
-    private final int TAMXP = 600;
+    private int TAMXP = 600;
     //Altura de la pantalla
     private final int TAMYP = 400;
     //Centro de la bola en x
@@ -49,7 +52,24 @@ public class PongMulti {
     private int score1 = 0;
     //El score 2
     private int score2 = 0;
+    //La musica
+    private Clip clip;
 
+    private void iniciarMusica(){
+        try {
+            AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File("src/musica/Windmill Isle.wav"));
+            clip = AudioSystem.getClip();
+            clip.open(audioInput);
+            clip.start();
+
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
+    }
     /**
      * Como bien dice el método, establece las cosas relacionadas con el pong, los stick la pelota la ventana el texto
      * las teclas, e incluso los colliders del stick y de la pelota
@@ -104,10 +124,24 @@ public class PongMulti {
         textTiempo4.setY(20);
         root2.getChildren().add(textTiempo4);
 
+        Text event = new Text("Evento actual: ");
+        event.setFont(Font.font(TEXT_SIZE));
+        event.setFill(Color.BLACK);
+        event.setX(200);
+        event.setY(20);
+        root2.getChildren().add(event);
+
+        Text eventactual = new Text("");
+        eventactual.setFont(Font.font(TEXT_SIZE));
+        eventactual.setFill(Color.BLACK);
+        eventactual.setX(300);
+        eventactual.setY(20);
+        root2.getChildren().add(eventactual);
+
         TimerEventos temp = new TimerEventos();
         temp.Contar(5);
 
-
+       iniciarMusica();
 
         animationPong = new Timeline(
                 new KeyFrame(Duration.seconds(segundos), (ActionEvent ae)-> {
@@ -152,121 +186,157 @@ public class PongMulti {
 
                     //Todo esto generá los eventos randoms para hacer todo mas divertido en el Pong
                     if (temp.getSegundos() == 0){
-                        int numero =  (int)(Math.random()*15+1);
+                        int numero =  (int)(Math.random()*34+1);
                         System.out.println(numero);;
-                        switch (31){
+                        switch (numero){
                             case 1:
                                 rect.setHeight(100);
+                                eventactual.setText("MOD Pala");
                                 break;
                             case 2:
                                 rect2.setHeight(100);
+                                eventactual.setText("MOD Pala");
                                 break;
                             case 3:
                                 rect.setHeight(50);
+                                eventactual.setText("MOD Pala");
                                 break;
                             case 4:
                                 rect2.setHeight(50);
+                                eventactual.setText("MOD Pala");
                                 break;
                             case 5:
                                 rect.setHeight(25);
+                                eventactual.setText("MOD Pala");
                                 break;
                             case 6:
                                 rect2.setHeight(25);
+                                eventactual.setText("MOD Pala");
                                 break;
                             case 7:
                                 rect.setWidth(14);
+                                eventactual.setText("MOD Pala");
                                 break;
                             case 8:
                                 rect2.setWidth(14);
+                                eventactual.setText("MOD Pala");
                                 break;
                             case 9:
                                 rect.setWidth(7);
+                                eventactual.setText("MOD Pala");
                                 break;
                             case 10:
                                 rect2.setWidth(7);
+                                eventactual.setText("MOD Pala");
                                 break;
                             case 11:
                                 rect.setWidth(3);
+                                eventactual.setText("MOD Pala");
                                 break;
                             case 12:
                                 rect2.setWidth(3);
+                                eventactual.setText("MOD Pala");
                                 break;
                             case 13:
                                 stickPosY = 100;
                                 StickPosEnemyY = 100;
+                                eventactual.setText("TP Pala");
                                 break;
                             case 14:
                                 stickPosY = 200;
                                 StickPosEnemyY = 200;
+                                eventactual.setText("TP Pala");
                                 break;
                             case 15:
                                 stickPosY = 300;
                                 StickPosEnemyY = 300;
+                                eventactual.setText("TP Pala");
                                 break;
                             case 16:
                                 ballCurrentSpeedX = 7;
                                 ballCurrentSpeedY = 7;
+                                eventactual.setText("MOD Bola");
                                 break;
                             case 17:
                                 ballCurrentSpeedX = 10;
                                 ballCurrentSpeedY = 10;
+                                eventactual.setText("MOD Bola");
                                 break;
                             case 18:
                                 ballCurrentSpeedX = 5;
                                 ballCurrentSpeedY = 5;
+                                eventactual.setText("MOD Bola");
                                 break;
                             case 19:
                                 ballCurrentSpeedX = -7;
                                 ballCurrentSpeedY = -7;
+                                eventactual.setText("MOD Bola");
                                 break;
                             case 20:
                                 ballCurrentSpeedX = -10;
                                 ballCurrentSpeedY = -10;
+                                eventactual.setText("MOD Bola");
                                 break;
                             case 21:
                                 ballCurrentSpeedX = -5;
                                 ballCurrentSpeedY = -5;
+                                eventactual.setText("MOD Bola");
                                 break;
                             case 22:
                                 ballCurrentSpeedX = 10;
+                                eventactual.setText("MOD Bola");
                                 break;
                             case 23:
                                 ballCurrentSpeedX = 5;
+                                eventactual.setText("MOD Bola");
                                 break;
                             case 24:
                                 ballCurrentSpeedX = 7;
+                                eventactual.setText("MOD Bola");
                                 break;
                             case 25:
                                 ballCurrentSpeedX = -10;
+                                eventactual.setText("MOD Bola");
                                 break;
                             case 26:
                                 ballCurrentSpeedX = -5;
+                                eventactual.setText("MOD Bola");
                                 break;
                             case 27:
                                 ballCurrentSpeedX = -7;
+                                eventactual.setText("MOD Bola");
                                 break;
                             case 28:
                                 ballCenterX = 300;
                                 ballCenterY = 30;
+                                eventactual.setText("MOD Bola");
                                 break;
                             case 29:
                                 circleball.setFill(Color.rgb(254,253,255));
+                                eventactual.setText("COLOR");
                                 break;
                             case 30:
                                 rect.setFill(Color.rgb(254,253,255));
+                                eventactual.setText("COLOR");
                                 break;
                             case 31:
                                 rect2.setFill(Color.rgb(254,253,255));
+                                eventactual.setText("COLOR");
                                 break;
                             case 32:
                                 circleball.setFill(Color.BLACK);
+                                eventactual.setText("COLOR");
                                 break;
                             case 33:
                                 rect.setFill(Color.BLACK);
+                                eventactual.setText("COLOR");
                                 break;
                             case 34:
                                 rect2.setFill(Color.BLACK);
+                                eventactual.setText("COLOR");
                                 break;
+
+
 
 
                         }
@@ -302,13 +372,17 @@ public class PongMulti {
                         if(score1>=10){
                             JOptionPane.showMessageDialog(null,"Gano el jugador 1");
                             animationPong.stop();
+
+                            clip.stop();
                         }
                         else if (score2>=10){
                             JOptionPane.showMessageDialog(null,"Gano el jugador 2");
                             animationPong.stop();
+                            clip.stop();
                         };
                         pongStage.close();
                     }
+
 
                     calcularVelocidad(conseguirStickCollision(circleball,rect));
                     calcularVelocidad2(conseguirStickCollision(circleball,rect2));

@@ -186,7 +186,9 @@ public class ViewManager {
         botonSalir.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+
                 mainStage.close();
+                System.exit(0);
             }
         });
 
