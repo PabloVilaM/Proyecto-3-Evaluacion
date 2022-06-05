@@ -32,7 +32,7 @@ public class Tabla {
 
         frame.getContentPane().add(scrollPane);
 
-        String[] columnNames = { "ID", "Score Trivia", "Score Pong", "Score PongMP", "Score laberinto" };
+        String[] columnNames = { "ID", "Score Trivia"};
 
         // creo un modelo de datos, sin datos por eso 'null' y establezco los
         // nombres de columna
@@ -48,20 +48,52 @@ public class Tabla {
         // pongo el botón en la ventana
         frame.getContentPane().add(btnAadirLnea);
         frame.setVisible(true);
+        btnAadirLnea.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                Conexion c = Conexion.getInstance();
+                try {
+                    c.consultar("Puntuaciones");
 
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+
+
+
+
+
+            }
+        });
     }
 
-    public static void insercionTabla(String nombre, String vida, String Pong, String PongMp, String Laberinto){
+   /* public static void insercionTabla(String nombre, String vida){
 
         btnAadirLnea.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 Conexion c = Conexion.getInstance();
+                try {
+                    c.consultar("Puntuaciones");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
 
-                Object[] aux = {nombre, vida,null, null, null };
-                model.addRow(aux);
+
+
+
+
 
             }
         });
 
+    }*/
+
+    public  static void insertarColumna(String nombre, String vida){
+        Object[] aux = {nombre, vida};
+        model.addRow(aux);
     }
 }

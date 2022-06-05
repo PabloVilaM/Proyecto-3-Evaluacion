@@ -268,17 +268,10 @@ public class ViewManager {
             @Override
             public void handle(ActionEvent event) {
 
+
                 Tabla tablita = new Tabla();
                 tablita.crearTabla();
-                Conexion c = Conexion.getInstance();
-                try {
-                    c.consultar("Puntuaciones");
 
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
 
             }
         });
