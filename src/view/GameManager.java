@@ -29,40 +29,52 @@ import javax.sound.sampled.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import static toolboxpablo.ToolBoxPablo.*;
+
 
 public class GameManager {
 
+    //tamaño de la ventana en ancho
     private   final int TAMX = 1100;
+    //tamaño de la ventana en alto
     private   final int TAMY = 618;
+    //Lo que comunmente se conoce como "fps"
     private float segundos = 0.017f;
-    ViewManager vm = null;
 
+   //A y B son dos variables que posteriormente usamos para coger tanto el tiempo sobrante como el que hay del segundo timer para la vida
     private  int a = 0;
     private  int b = 0;
 
+    //Posición del misil en el ancho
     private   int misilx = 0;
+    //Posicion del misil en el alto
     private  int misily = 0;
+    //Velocidad del misil ( a cuantos pixeles se mueve para entendernos)
     private  float misilspeed = 0;
 
+    //Posicion del misil enemigo en el ancho
     private  int misilmalox = 0;
+    //Posicion del misil enemigo en lo alto
     private  int misilmaloy = 0;
+    //Velocidad del misil enemigo
     private  float misilmalospeed = 0;
 
+    //Tu HP o vida en español
     private   int hp=99;
-    private   int hp2=5;
+    //El hp del enemigo o vida en español
+    private   int hp2=99;
+    //Objeto "core" dado que es quien mantiene la animacion, en una timeline de duracion infinita hasta que nosotros queramos
     private Timeline animationball;
 
-    Clip clip;
-    
-    public void inicializarJuego (){
-       
-        AnchorPane root = new AnchorPane();
-        Scene scene = new Scene(root,TAMX, TAMY, Color.BLACK);
-        String hpvida = String.valueOf(hp);
-            String hpvida2 = String.valueOf(hp2);
+    //Un objeto Clip, sirve para dar audio al juego
+    private Clip clip;
 
+    /**
+     * Clase por la cual se añade musica al juego, el clip pertenecera a la clase para luego pausarlo
+     */
+    private void iniciarMusica(){
         try {
-            AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File("Inicio.wav"));
+            AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File("src/musica/Inicio.wav"));
             clip = AudioSystem.getClip();
             clip.open(audioInput);
             clip.start();
@@ -73,6 +85,22 @@ public class GameManager {
         } catch (LineUnavailableException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Este método es sencillo, pero repetitivo por eso es tan grande. Creamos
+     * todo lo que tenga que ver con la pantalla del trivia, el panel las naves los misiles, el fondo etc... y les damos las coordenadas
+     * y la velocidad de ser necesario, ademas añade las teclas que se pueden pulsar y el guardado de logs así como todo lo que corrresponde al juego.
+     */
+    public void inicializarJuego (){
+
+        iniciarMusica();
+
+        AnchorPane root = new AnchorPane();
+        Scene scene = new Scene(root,TAMX, TAMY, Color.BLACK);
+        String hpvida = String.valueOf(hp);
+            String hpvida2 = String.valueOf(hp2);
+
 
            Stage primaryStage = new Stage();
             primaryStage.setTitle("ExceptionHunter");
@@ -80,7 +108,7 @@ public class GameManager {
             primaryStage.show();
 
 
-            Image image3 = new Image("file:Missile.png");
+            Image image3 = new Image("file:src/view/imagenesJuegoPrincipal/Missile.png");
             ImageView mv3 = new ImageView(image3);
             root.getChildren().add(mv3);
             mv3.setRotate(90);
@@ -90,7 +118,7 @@ public class GameManager {
             mv3.setFitWidth(50);
             mv3.setPreserveRatio(true);
 
-            Image image5 = new Image("file:MissilVerde.png");
+            Image image5 = new Image("file:src/view/imagenesJuegoPrincipal/MissilVerde.png");
             ImageView mv5 = new ImageView(image5);
             root.getChildren().add(mv5);
             mv5.setLayoutX(1030);
@@ -100,7 +128,7 @@ public class GameManager {
             mv5.setRotate(-90);
             mv5.setPreserveRatio(true);
 
-            Image image = new Image("file:spaceShipSingleShoot.png");
+            Image image = new Image("file:src/view/imagenesJuegoPrincipal/spaceShipSingleShoot.png");
             ImageView mv = new ImageView(image);
             root.getChildren().add(mv);
             mv.setRotate(-90);
@@ -110,7 +138,7 @@ public class GameManager {
             mv.setFitWidth(100);
             mv.setPreserveRatio(true);
 
-            Image image4 = new Image("file:ovni.png");
+            Image image4 = new Image("file:src/view/imagenesJuegoPrincipal/ovni.png");
             ImageView mv4 = new ImageView(image4);
             root.getChildren().add(mv4);
             mv4.setLayoutX(1000);
@@ -119,7 +147,7 @@ public class GameManager {
             mv4.setFitWidth(100);
             mv4.setPreserveRatio(true);
 
-            Image image6 = new Image("file:Hearth.png");
+            Image image6 = new Image("file:src/view/imagenesJuegoPrincipal/Hearth.png");
             ImageView mv6 = new ImageView(image6);
             root.getChildren().add(mv6);
             mv6.setLayoutX(965);
@@ -128,7 +156,7 @@ public class GameManager {
             mv6.setFitWidth(150);
             mv6.setPreserveRatio(true);
 
-            Image image7 = new Image("file:Hearth.png");
+            Image image7 = new Image("file:src/view/imagenesJuegoPrincipal/Hearth.png");
             ImageView mv7 = new ImageView(image7);
             root.getChildren().add(mv7);
             mv7.setLayoutX(-10);
@@ -153,10 +181,10 @@ public class GameManager {
             root.getChildren().add(textTiempo2);
 
 
-            BackgroundImage myBI= new BackgroundImage(new Image("file:cityskyline.png",1100,634,false,true),
+            BackgroundImage myBI= new BackgroundImage(new Image("file:src/view/imagenesJuegoPrincipal/cityskyline.png",1100,634,false,true),
                     BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                     BackgroundSize.DEFAULT);
-                //then you set to your node
+
             root.setBackground(new Background(myBI));
              animationball = new Timeline(
                     new KeyFrame(Duration.seconds(segundos), (ActionEvent ae)-> {
@@ -170,6 +198,8 @@ public class GameManager {
                         mv5.setX(misilmalox);
 
 
+                        //Si los misiles llegan a chocar con las naves, se genera la pregunta, el timer y se guardan las respuestas en los logs
+                        //para que luego se puedan visionar, obviamente pausa la ventana de atras y los misiles recuperan la posicion inicial.
                         if (misilx >= 995){
                             misilspeed = 0.0001f;
                             misilmalospeed = 0.0001f;
@@ -183,10 +213,10 @@ public class GameManager {
 
                             int numero = (int)(Math.random()*65+1);
                             Map<Integer, String> map = Preguntas.crearLista();
-                            System.out.println(numero);
+                            leerInt(numero);
                             String pregunta = Preguntas.darPreguntas(numero, map);
                             Tiempo temp = new Tiempo();
-                            temp.Contar();
+                            temp.Contar(15);
                             String respuesta = JOptionPane.showInputDialog(pregunta);
                             boolean correcion = Preguntas.comprobarRespuesta(numero, respuesta);
                             if (correcion == false || correcion == true){
@@ -213,7 +243,8 @@ public class GameManager {
 
                             animationball.play();
                         }
-
+                        //Si el hp de cualquiera de los dos llega a igual o menor que 0 acaba la partida y cierra la
+                        //musica y el la ventana.
                     if(hp <= 0 || hp2 <= 0){
                            primaryStage.close();
                            if (hp <= 0){
@@ -221,7 +252,8 @@ public class GameManager {
                                String auxHp= hp+"";
                                Statement sentence = null;
                                Connection c = null;
-                               Conexion cn = new Conexion(sentence, c, "Puntuaciones");
+                               //Conexion cn = new Conexion(sentence, c, "Puntuaciones");
+                               Conexion cn = Conexion.getInstance();
                                animationball.stop();
                                clip.stop();
                                try {
@@ -238,7 +270,8 @@ public class GameManager {
                                String auxHp= hp+"";
                                Statement sentence = null;
                                Connection c = null;
-                               Conexion cn = new Conexion(sentence, c, "Puntuaciones");
+                               //Conexion cn = new Conexion(sentence, c, "Puntuaciones");
+                               Conexion cn = Conexion.getInstance();
                                animationball.stop();
                                clip.stop();
                                 try {
@@ -254,7 +287,10 @@ public class GameManager {
                        }
 
 
-
+                        primaryStage.setOnCloseRequest(evt -> {
+                            // Para la musica
+                            clip.stop();
+                        });
 
                     })
             );
@@ -262,7 +298,7 @@ public class GameManager {
             animationball.play();
 
 
-
+             //Boton de spacio para iniciar la lanzada de misiles, escape para pausar el juego si no estas en pregunta y p para reaundarlo
             scene.setOnKeyPressed(new EventHandler<KeyEvent>(){
                 public void handle(KeyEvent event){
                     switch(event.getCode()){
